@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "material-dashboard": "^3.0.9"
+        "material-dashboard": "^3.0.9",
+        "sweetalert2": "^11.7.23"
     }
 }
