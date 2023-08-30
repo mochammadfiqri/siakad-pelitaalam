@@ -214,6 +214,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- Custom Style --}}
         <style>
             .nav-pills .nav-link.active {
                 background-color: #e91e63;

@@ -15,12 +15,4 @@
 
 @yield('content')
 
-{{-- <body class="index-page bg-gray-200">    
-    @yield('content')
-
-    <!--   Core JS Files   -->
-    @yield('javascript')
-    @livewireScripts
-</body> --}}
-
 </html>

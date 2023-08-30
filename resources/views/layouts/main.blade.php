@@ -15,17 +15,21 @@
 
 <body class="g-sidenav-show bg-gray-200">
     @yield('sidebar')
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ps ps--active-y ">
         <!-- Navbar -->
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
-            @include('layouts.navbar')
-        </nav>
+        @include('layouts.navbar')
         <!-- End Navbar -->
         @yield('content')
+
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+        <div class="ps__rail-y" style="top: 0px; height: 1186px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 913px;"></div></div>
     </main>
     @include('layouts.fixedPlugin')
+
     <!--   Core JS Files   -->
     @yield('javascript')
+    {{-- <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script> --}}
+    {{-- <script src="{{ asset('js/plugins/dropzone.min.js') }}"></script> --}}
     @livewireScripts
 </body>
 

@@ -3,7 +3,8 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\GuruController;
+use App\Http\Controllers\GTKController;
+use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\SiswaController;
 
 /*
@@ -39,11 +40,13 @@ Route::middleware('auth')->group(function() {
 
     Route::middleware('only_admin')->group(function() {
         Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard.admin');
+        Route::get('/gtk', [GTKController::class, 'index'])->name('data.gtk');
+        Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan');
     });
     Route::middleware('only_student')->group(function() {
         Route::get('/student/dashboard', [SiswaController::class, 'index'])->name('dashboard.siswa');
     });
     Route::middleware('only_teacher')->group(function() {
-        Route::get('/teacher/dashboard', [GuruController::class, 'index'])->name('dashboard.guru');
+        Route::get('/teacher/dashboard', [GTKController::class, 'dashboardGTK'])->name('dashboard.guru');
     });
 });

@@ -1,4 +1,5 @@
-<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+<nav class="navbar navbar-main navbar-expand-lg position-sticky mt-4 top-1 px-0 mx-4 border-radius-xl z-index-sticky shadow-none"
+    id="navbarBlur" data-scroll="true">
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -7,9 +8,16 @@
             </ol>
             <h6 class="font-weight-bolder mb-0">@yield('navbar2')</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            </div>
+        <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none ">
+            <a href="javascript:;" class="nav-link p-0 text-body">
+                <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                </div>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <a class="btn btn-outline-success btn-sm mb-0 me-3" target="_blank" href="#">Online</a>
@@ -24,13 +32,19 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         {{-- tambahkan fa-shake jika ada notif --}}
                         {{-- <i class="fa-solid fa-bell fa-shake fa-lg cursor-pointer"></i> --}}
                         <i class="fa-solid fa-bell fa-lg cursor-pointer"></i>
+                        <span
+                            class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
+                            <span class="small">3</span>
+                            <span class="visually-hidden">unread notifications</span>
+                        </span>
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu  dropdown-menu-end px-2 py-3 me-sm-n4"
+                        aria-labelledby="dropdownMenuButton">
                         <li class="mb-2">
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
@@ -73,7 +87,8 @@
                                 <div class="d-flex py-1">
                                     <div class="avatar avatar-sm bg-gradient-secondary me-3 my-auto">
                                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <title>credit-card</title>
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                 <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"

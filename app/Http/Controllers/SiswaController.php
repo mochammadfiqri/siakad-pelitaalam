@@ -8,6 +8,6 @@ class SiswaController extends Controller
 {
     public function index() {
         // $request->session()->flush();
-        return view('admin.dashboard');
+        return view('pages.dashboard');
     }
 }

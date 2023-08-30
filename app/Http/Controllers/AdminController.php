@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index(Request $request) {
-        // $request->session()->flush();
-        return view('admin.dashboard');
+    public function index() {
+        return view('pages.dashboard');
     }
 }
