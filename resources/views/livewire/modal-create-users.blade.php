@@ -145,8 +145,8 @@
                         <div wire:ignore class="input-group input-group-outline mt-1">
                             <select wire:model='jenis_kelamin' class="form-control">
                                 <option selected>Pilih Jenis Kelamin</option>
-                                <option value="L">Laki - Laki</option>
-                                <option value="P">Perempuan</option>
+                                <option value="Laki - Laki">Laki - Laki</option>
+                                <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                         </div>
                         <div class="col-6">
                             <label>Jenis Kelamin</label>
-                            <input type="text" class="form-control" placeholder="{{ $jenis_kelamin }}"
+                            <input type="text" class="form-control" placeholder="tes"
                                 onfocus="focused(this)" onfocusout="defocused(this)" disabled>
                         </div>
                     </div>

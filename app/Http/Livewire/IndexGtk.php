@@ -109,7 +109,7 @@ class IndexGtk extends Component
   {
     $this->nip           = '';
     $this->nama          = '';
-    $this->jenis_kelamin = '';
+    $this->jenis_kelamin = null;
     $this->tgl_lahir     = '';
     $this->alamat        = '';
     $this->email         = '';
@@ -122,7 +122,6 @@ class IndexGtk extends Component
 
   public function render()
   {
-    $jenis_kelamin = JenisKelamin::all();
     $dataGuru = $this->search === null ?
     User::latest()
       ->where('role_id', 3) // Filter berdasarkan role_id 3
@@ -146,7 +145,6 @@ class IndexGtk extends Component
       return view('livewire.index-gtk', [
         'dataGuru' => $dataGuru,
         'mapel'    => $mapel,
-        'jenis_kelamin' => $jenis_kelamin,
       ]);
   }
 }
