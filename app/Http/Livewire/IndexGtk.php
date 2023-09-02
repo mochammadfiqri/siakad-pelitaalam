@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\JenisKelamin;
 use App\Models\MataPelajaran;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -14,8 +15,9 @@ class IndexGtk extends Component
   use WithPagination;
   use WithFileUploads;
   protected $paginationTheme = 'bootstrap';
-  public $nip, $nama, $jenis_kelamin, $tgl_lahir, $alamat, $email, $username, $password,
+  public $nip, $nama, $tgl_lahir, $alamat, $email, $username, $password,
   $no_hp, $foto, $role_id;
+  public $jenis_kelamin = [];
   public $search;
   public $paginate       = 5;
   public $currentStep    = 1;
@@ -120,6 +122,7 @@ class IndexGtk extends Component
 
   public function render()
   {
+    $jenis_kelamin = JenisKelamin::all();
     $dataGuru = $this->search === null ?
     User::latest()
       ->where('role_id', 3) // Filter berdasarkan role_id 3
@@ -127,8 +130,7 @@ class IndexGtk extends Component
     User::latest()
         ->where('role_id', 3) // Filter berdasarkan role_id 3
         ->where(function ($query) {
-          $query->where('nisn', 'like', '%' . $this->search . '%')
-            ->orWhere('nis', 'like', '%' . $this->search . '%')
+          $query->where('nip', 'like', '%' . $this->search . '%')
             ->orWhere('nama', 'like', '%' . $this->search . '%')
             ->orWhere('no_hp', 'like', '%' . $this->search . '%');
           })
@@ -144,6 +146,7 @@ class IndexGtk extends Component
       return view('livewire.index-gtk', [
         'dataGuru' => $dataGuru,
         'mapel'    => $mapel,
+        'jenis_kelamin' => $jenis_kelamin,
       ]);
   }
 }

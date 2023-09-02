@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('semester', function (Blueprint $table) {
+        Schema::create('jenis_kelamin', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('ta_id');
-            $table->foreign('ta_id')->references('id')->on('tahun_akademik');
-            $table->string('nama_semester', 100);
+            $table->string('nama', 100);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semester');
+        Schema::dropIfExists('jenis_kelamin');
     }
 };

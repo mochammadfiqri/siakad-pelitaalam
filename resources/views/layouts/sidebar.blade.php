@@ -71,7 +71,7 @@
                     <div class="collapse" id="setSekolah">
                         <ul class="nav ">
                             <li class="nav-item">
-                                <a class="nav-link text-white " href="#">
+                                <a class="nav-link text-white {{ request()->routeIs('KS') ? 'active bg-gradient-primary' : '' }}" href="/kepala-sekolah">
                                     <div
                                         class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                         <i class="material-icons-round opacity-10">person</i>
@@ -120,7 +120,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white " href="#">
+                                <a class="nav-link text-white {{ request()->routeIs('siswa') ? 'active bg-gradient-primary' : '' }}" href="/siswa">
                                     <div
                                         class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                         <i class="material-icons-round opacity-10">person</i>
@@ -138,7 +138,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white " href="#">
+                                <a class="nav-link text-white {{ request()->routeIs('TahunAkademik') ? 'active bg-gradient-primary' : '' }}" href="/tahun-akademik">
                                     <div
                                         class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                         <i class="material-icons-round opacity-10">person</i>

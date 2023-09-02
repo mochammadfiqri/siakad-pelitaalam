@@ -1,6 +1,6 @@
 @extends('layouts.main')
-@section('navbar1', 'Jurusan')
-@section('navbar2', 'Data Jurusan')
+@section('navbar1', 'Data Kepala Sekolah')
+@section('navbar2', 'Daftar Kepala Sekolah')
 
 @section('stylesheet')
 <!-- Fonts and icons -->
@@ -61,8 +61,8 @@
 
 @section('content')
 <div class="container-fluid py-4">
-    <livewire:index-jurusan />
-    
+    <livewire:index-kepala-sekolah />
+
     <style>
         .nav-pills .nav-link.active {
             background-color: #e91e63;
@@ -120,4 +120,5 @@
         }, 3000);
     });
 </script>
+
 @endsection
