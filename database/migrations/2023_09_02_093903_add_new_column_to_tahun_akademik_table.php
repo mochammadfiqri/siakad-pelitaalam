@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::table('tahun_akademik', function (Blueprint $table) {
             $table->string('tahun_awal')->after('id');
             $table->string('tahun_akhir')->after('id');
-            $table->unsignedBigInteger('semester_id')->after('id');
-            $table->foreign('semester_id')->references('id')->on('semester');
+            // $table->unsignedBigInteger('semester_id')->after('id');
+            // $table->foreign('semester_id')->references('id')->on('semester');
         });
     }
 
@@ -31,8 +31,8 @@ return new class extends Migration
         Schema::table('tahun_akademik', function (Blueprint $table) {
             $table->dropColumn('tahun_awal');
             $table->dropColumn('tahun_akhir');
-            $table->dropForeign('tahun_akademik_semester_id_foreign');
-            $table->dropColumn('semester_id');
+            // $table->dropForeign('tahun_akademik_semester_id_foreign');
+            // $table->dropColumn('semester_id');
         });
     }
 };

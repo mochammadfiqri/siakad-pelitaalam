@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -14,18 +14,14 @@ class TahunAkademik extends Model
     protected $fillable = [
         'tahun_awal',
         'tahun_akhir',
-        'semester_id',
+        'semester',
         'tgl_awal',
         'tgl_akhir',
+        'status',
     ];
-
-    public function semester(): BelongsTo
-    {
-        return $this->belongsTo(Semester::class, 'semester_id', 'id');
-    }
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'siswa_ta', 'user_id', 'ta_id');
+        return $this->belongsToMany(User::class, 'siswa_ta', 'ta_id', 'user_id');
     }
 }

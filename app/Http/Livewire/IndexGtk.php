@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\JenisKelamin;
 use App\Models\MataPelajaran;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +21,6 @@ class IndexGtk extends Component
   public $paginate       = 5;
   public $currentStep    = 1;
   public $successMessage = '';
-  public $mapel_id       = [];
   public $countGuru;
 
   public function mount()
@@ -56,7 +54,6 @@ class IndexGtk extends Component
     'username' => 'required',
     'password' => 'required',
     'no_hp'    => 'required|numeric',
-    'mapel_id' => 'required',
     ]);
 
     $this->currentStep = 3;
@@ -85,7 +82,6 @@ class IndexGtk extends Component
       'password'      => $hashedPassword,
       'no_hp'         => $this->no_hp,
       'role_id'       => $defaultRoleId,
-      'mapel_id'      => $this->mapel_id,
       'foto'          => $pathFoto,
     ];
 
@@ -116,7 +112,6 @@ class IndexGtk extends Component
     $this->username      = '';
     $this->password      = '';
     $this->no_hp         = '';
-    $this->mapel_id      = '';
     $this->foto          = '';
   }
 

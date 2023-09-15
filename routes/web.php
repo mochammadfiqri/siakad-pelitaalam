@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GTKController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\KSController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TAController;
 
@@ -42,11 +43,19 @@ Route::middleware('auth')->group(function() {
 
     Route::middleware('only_admin')->group(function() {
         Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard.admin');
+        
         Route::get('/gtk', [GTKController::class, 'index'])->name('data.gtk');
+
         Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan');
+
         Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
+
         Route::get('/tahun-akademik', [TAController::class, 'index'])->name('TahunAkademik');
+        Route::get('/tahun-akademik/mapel', [TAController::class, 'indexMapel'])->name('mapel');
+        Route::get('/tahun-akademik/rombel', [TAController::class, 'indexRombel'])->name('rombel');
+
         Route::get('/kepala-sekolah', [KSController::class, 'index'])->name('KS');
+        
     });
     Route::middleware('only_student')->group(function() {
         Route::get('/student/dashboard', [SiswaController::class, 'dashboardSiswa'])->name('dashboard.siswa');

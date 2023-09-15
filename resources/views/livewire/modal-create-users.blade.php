@@ -226,16 +226,6 @@
                                 data-gtm-form-interact-field-id="3">
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <div wire:ignore class="input-group input-group-outline mt-1">
-                            <select wire:model="mapel_id" class="form-control selectpicker dropdown-toggle" data-live-search="true">
-                                @foreach ($mapel as $item)
-                                    <option selected>Pilih Mata Pelajaran...</option>
-                                    <option value="{{ $item->id }}">{{ $item->name }}</option>                                
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
                     <button class="btn btn-danger btn-rounded shadow-dark" type="button"
                         wire:click="back(1)">Back</button>
                     <button class="btn btn-success btn-rounded shadow-dark float-end" wire:click="secondStepSubmit"

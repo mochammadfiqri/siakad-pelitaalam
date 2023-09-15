@@ -27,9 +27,9 @@
                                         <a href="#" class="btn btn-rounded btn-outline-secondary mb-2 float-end" role="button">
                                             <i class="material-icons material-icons-round">print</i>&nbsp;&nbsp;Rekap Laporan
                                         </a>
-                                        <a class="btn btn-rounded bg-gradient-info mb-0 me-2 float-end" href="#">
+                                        {{-- <a class="btn btn-rounded bg-gradient-info mb-0 me-2 float-end" href="#">
                                             <i class="fa-solid fa-upload"></i>&nbsp;&nbsp;&nbsp;Unggah Data
-                                        </a>
+                                        </a> --}}
                                         <a class="btn btn-rounded bg-gradient-info mb-0 me-2 float-end" data-bs-toggle="modal"
                                             data-bs-target="#addKS" data-te-ripple-init data-te-ripple-color="light">
                                             <i class="material-icons material-icons-round">add</i>&nbsp;&nbsp;&nbsp;Tambah Kepala Sekolah

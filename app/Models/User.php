@@ -32,7 +32,6 @@ class User extends Authenticatable
         'password',
         'no_hp',
         'role_id',
-        'mapel_id',
         'foto',
     ];
 
@@ -55,8 +54,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function mapel(): BelongsTo
-    {
-        return $this->belongsTo(MataPelajaran::class, 'mapel_id', 'id');
-    }
+    // public function mapel(): BelongsTo
+    // {
+    //     return $this->belongsTo(MataPelajaran::class, 'mapel_id', 'id');
+    // }
 }
