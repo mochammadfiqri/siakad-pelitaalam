@@ -26,8 +26,8 @@
                 NIP</th>
             <th class="text-left text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                 Nama</th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                Mata Pelajaran</th>
+            {{-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                Mata Pelajaran</th> --}}
             <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                 Foto</th>
             <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">
@@ -48,13 +48,13 @@
                         <td class="text-left">
                             <span class="text-secondary text-xs font-weight-bold text-left me-3">{{ $data->nama }}</span>
                         </td>
-                        <td class="text-center">
+                        {{-- <td class="text-center">
                             @if ($data->mapel) <!-- Check if the mapel relationship exists -->
                                 <span class="text-secondary text-xs font-weight-bold text-center me-3">{{ $data->mapel->name }}</span>
                             @else
                                 <span class="text-secondary text-xs font-weight-bold text-center me-3">No Mapel</span>
                             @endif
-                        </td>
+                        </td> --}}
                         <td class="text-end">
                             @if ($data->foto !== null)
                                 <img src="{{ asset('storage/'.$data->foto) }}" class="avatar avatar-sm me-3">
@@ -93,15 +93,6 @@
                                     <li><a class="dropdown-item border-radius-md" href="javascript:;">Hapus</a></li>
                                 </ul>
                             </div>
-
-                            {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#updateBooks"
-                                wire:click='editBooks({{ $data->id }})'
-                                class="btn btn-info btn-sm mt-3 ms-4">Edit</button>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteBooks"
-                                wire:click='deleteBooks({{ $data->id }})'
-                                class="btn btn-danger btn-sm mt-3">Hapus</button>
-                            <a href="e-catalog/detail/{{ $data->id }}" type="button"
-                                class="btn btn-primary btn-sm mt-3">Detail</a> --}}
                         </td>
                     </tr>
                 @endforeach
@@ -118,9 +109,6 @@
                     </td>
                     <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">Tidak ada data yang ditemukan</span>
-                    </td>
-                    <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"> </span>
                     </td>
                     <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold"> </span>

@@ -31,16 +31,13 @@
                         <td class="text-center">
                             <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->nisn }}</span>
                         </td>
-                        <td class="text-left">
-                            <span class="text-secondary text-xs font-weight-bold text-left">{{ $data->nama }}</span>
+                        <td class="text-center">
+                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->nama }}</span>
                         </td>
                         <td class="text-center">
-                            {{-- @if ($data->mapel) <!-- Check if the mapel relationship exists -->
-                                <span class="text-secondary text-xs font-weight-bold text-center me-3">{{ $data->mapel->name }}</span>
-                            @else
-                                <span class="text-secondary text-xs font-weight-bold text-center me-3">No Mapel</span>
-                            @endif --}}
-                            <span class="text-secondary text-xs font-weight-bold text-center me-1">Rombel</span>
+                            <span class="text-secondary text-xs font-weight-bold text-center me-1">
+                                {{ optional($data->rombel)->kelas }} {{ optional(optional($data->rombel)->jurusan)->nama }}
+                            </span>
                         </td>
                         <td class="text-center">
                             @if ($data->foto !== null)
@@ -76,8 +73,13 @@
                                     <span class="material-icons">more_vert</span>
                                 </button>
                                 <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Edit</a></li>
-                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Hapus</a></li>
+                                    <li><a class="dropdown-item border-radius-md" >
+                                        Edit
+                                    </a></li>
+                                    <li><a class="dropdown-item border-radius-md" data-bs-toggle="modal" data-bs-target="#deleteSiswa"
+                                        wire:click='deleteSiswa({{ $data->id }})'>
+                                        Hapus
+                                    </a></li>
                                 </ul>
                             </div>
                         </td>

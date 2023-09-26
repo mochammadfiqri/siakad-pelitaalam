@@ -99,8 +99,7 @@ class IndexJurusan extends Component
         $dataJurusan = $this->search === null ?
         Jurusan::latest()->paginate($this->paginate) :
         Jurusan::latest()
-            ->where('kode_jurusan', 'like', '%' . $this->search . '%')
-            ->orWhere('nama', 'like', '%' . $this->search . '%')
+            ->where('nama', 'like', '%' . $this->search . '%')
             ->paginate($this->paginate);
 
         return view('livewire.index-jurusan', [

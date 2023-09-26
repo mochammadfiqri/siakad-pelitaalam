@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\MataPelajaran;
+use App\Models\Rombel;
+use App\Models\Jurusan;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -32,6 +33,7 @@ class User extends Authenticatable
         'password',
         'no_hp',
         'role_id',
+        'rombel_id',
         'foto',
     ];
 
@@ -54,8 +56,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function mapel(): BelongsTo
+    public function rombel(): BelongsTo
+    {
+        return $this->belongsTo(Rombel::class, 'rombel_id', 'id');
+    }
+
+    // public function jurusan(): BelongsTo
     // {
-    //     return $this->belongsTo(MataPelajaran::class, 'mapel_id', 'id');
+    //     return $this->belongsTo(Jurusan::class, 'jurusan_id', 'id');
     // }
+
 }

@@ -67,6 +67,13 @@
             background-color: #e91e63;
             color: white; /* Adjust text color as needed */
         }
+
+        .disabled-link {
+            color: inherit; /* Menggunakan warna teks yang sama dengan teks sekitarnya */
+            text-decoration: none; /* Menghilangkan garis bawah yang menunjukkan tautan */
+            cursor: not-allowed; /* Mengubah kursor mouse menjadi "not allowed" */
+            pointer-events: none; /* Menonaktifkan interaksi klik */
+        }
     </style>
 </div>
 @endsection

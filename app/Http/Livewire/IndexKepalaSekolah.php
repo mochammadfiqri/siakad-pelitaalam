@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
-use App\Models\JenisKelamin;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Hash;
@@ -59,7 +58,7 @@ class IndexKepalaSekolah extends Component
 
         $hashedPassword = Hash::make($this->password);
 
-        $dataGuru = [
+        $dataKepsek = [
         'nip'           => $this->nip,
         'nama'          => $this->nama,
         'jenis_kelamin' => $this->jenis_kelamin,
@@ -73,7 +72,7 @@ class IndexKepalaSekolah extends Component
         'foto'          => $pathFoto,
         ];
 
-        User::create($dataGuru);
+        User::create($dataKepsek);
 
         $this->clearForm();
         // $this->successMessage = 'You\'ve successfully added';

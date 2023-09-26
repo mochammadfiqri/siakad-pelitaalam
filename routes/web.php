@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function() {
 
     Route::middleware('only_admin')->group(function() {
         Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard.admin');
-        
+
         Route::get('/gtk', [GTKController::class, 'index'])->name('data.gtk');
 
         Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan');
@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function() {
         Route::get('/tahun-akademik', [TAController::class, 'index'])->name('TahunAkademik');
         Route::get('/tahun-akademik/mapel', [TAController::class, 'indexMapel'])->name('mapel');
         Route::get('/tahun-akademik/rombel', [TAController::class, 'indexRombel'])->name('rombel');
+        Route::get('/tahun-akademik/rombel/{id}', [TAController::class, 'detailRombel'])->name('detailRombel');
 
         Route::get('/kepala-sekolah', [KSController::class, 'index'])->name('KS');
         

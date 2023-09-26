@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rombel;
 use Illuminate\Http\Request;
 
 class TAController extends Controller
 {
+    public function detailRombel() {
+        return view('pages.detailRombel');
+    }
+    
     public function indexRombel() {
         return view('pages.rombel');
     }

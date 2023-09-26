@@ -1,4 +1,3 @@
-{{-- @props(['dataMapel']) --}}
 <div>
     <table class="table align-items-center mb-0">
         <thead>
@@ -33,7 +32,7 @@
                         </td>
                         <td class="text-center">
                             @foreach ($data->users as $data)
-                                <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->nama }}</span>    
+                                <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->nama }}</span>
                             @endforeach
                             
                             {{-- <span class="text-secondary text-xs font-weight-bold text-center me-3">Informasi</span> --}}

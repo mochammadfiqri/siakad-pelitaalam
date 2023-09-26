@@ -98,8 +98,6 @@
 </div>
 
 <!-- Edit Modal Tahun Akademik -->
-
-                
 <div wire:ignore.self class="modal fade" id="updateTA" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="updateTALabel" aria-hidden="true">
     <div class="modal-dialog overflow-auto overflow-x-hidden" role="document">

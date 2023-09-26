@@ -4,38 +4,34 @@
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 5%;">
                 No.</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 10%;">
-                Kode Mapel</th>
+                Kelas</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" >
-                Mata Pelajaran</th>
+                Wali Kelas</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                WhatsApp</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 10%;">
-                KKM</th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 10%;">
-                Guru Pengajar</th>
+                Informasi</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 10%;">
                 Aksi</th>
         </thead>
         <tbody>
-            @if ($dataMapel->count() > 0)
-                @foreach ($dataMapel as $data)
+            @if ($dataRombel->count() > 0)
+                @foreach ($dataRombel as $data)
                     <tr>
                         <td class="text-center">
                             <span class="text-secondary text-xs font-weight-bold text-center">{{ $loop->iteration }}</span>
                         </td>
                         <td class="text-center">
-                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->kode_mapel }}</span>
+                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->kelas }} {{ $data->jurusan->kode_jurusan }} {{ $data->kode_kelas }}</span>
                         </td>
                         <td class="text-center">
-                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->name }}</span>
+                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->walas->nama }}</span>
                         </td>
                         <td class="text-center">
-                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->kkm }}</span>
+                            <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->walas->no_hp }}</span>
                         </td>
                         <td class="text-center">
-                            @foreach ($data->users as $data)
-                                <span class="text-secondary text-xs font-weight-bold text-center">{{ $data->nama }}</span>    
-                            @endforeach
-                            
-                            {{-- <span class="text-secondary text-xs font-weight-bold text-center me-3">Informasi</span> --}}
+                            <a href="rombel/{{ $data->id }}" class="btn btn-rounded bg-gradient-info btn-sm mb-0 me-1">Detail</a>
                         </td>
                         <td class="text-center">
                             <style>
@@ -92,6 +88,6 @@
         </tbody>
     </table>
     <div class="float-end me-3">
-        {{ $dataMapel->links() }}
+        {{ $dataRombel->links() }}
     </div>
 </div>

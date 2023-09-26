@@ -1,6 +1,6 @@
 @extends('layouts.main')
-@section('navbar1', 'Siswa')
-@section('navbar2', 'Data Siswa')
+@section('navbar1', 'Detail Kelas')
+@section('navbar2', 'Detail Kelas')
 
 @section('stylesheet')
     <!-- Fonts and icons -->
@@ -61,7 +61,7 @@
 
 @section('content')
     <div class="container-fluid py-4">
-        <livewire:index-siswa />
+        <livewire:detail-rombel />
 
         <style>
             .nav-pills .nav-link.active {
@@ -80,77 +80,6 @@
     <script src="{{ asset('js/plugins/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/plugins/smooth-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/plugins/chartjs.min.js') }}"></script>
-    <script>
-        // Doughnut chart
-        var ctx3 = document.getElementById("doughnut-chart-gender").getContext("2d");
-
-        new Chart(ctx3, {
-            type: "doughnut",
-            data: {
-                labels: ['Laki - Laki', 'Perempuan'],
-                datasets: [{
-                    label: "Jenis Kelamin",
-                    weight: 9,
-                    cutout: 60,
-                    tension: 0.9,
-                    pointRadius: 2,
-                    borderWidth: 2,
-                    backgroundColor: ['#ff0000', '#0084ff'],
-                    data: [5, 97],
-                    fill: false
-                }],
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: false,
-                    }
-                },
-                interaction: {
-                    intersect: false,
-                    mode: 'index',
-                },
-                
-            },
-        });
-
-        var ctx3 = document.getElementById("doughnut-chart-jurusan").getContext("2d");
-
-        new Chart(ctx3, {
-            type: "doughnut",
-            data: {
-                labels: ['Asisten Keperawatan', 'Farmasi Klinis & Komunitas'],
-                datasets: [{
-                    label: "Jurusan",
-                    weight: 9,
-                    cutout: 60,
-                    tension: 0.9,
-                    pointRadius: 2,
-                    borderWidth: 2,
-                    backgroundColor: ['#04ff00', '#0091ff'],
-                    data: [51, 51],
-                    fill: false
-                }],
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: false,
-                    }
-                },
-                interaction: {
-                    intersect: false,
-                    mode: 'index',
-                },
-                
-            },
-        });
-
-    </script>
 
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -192,4 +121,5 @@
             }, 3000);
         });
     </script>
+    
 @endsection

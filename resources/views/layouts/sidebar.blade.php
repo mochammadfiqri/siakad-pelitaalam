@@ -64,7 +64,7 @@
                     <a class="nav-link text-white" data-bs-toggle="collapse" href="#setSekolah"
                         class="nav-link text-white" aria-controls="setSekolah" role="button" aria-expanded="false">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons-round opacity-10">school</i>
+                            <i class="material-icons-round opacity-10">tune</i>
                         </div>
                         <span class="nav-link-text ms-1">Pengaturan Sekolah</span>
                     </a>
@@ -146,6 +146,42 @@
                                     <span class="nav-link-text ms-1">Tahun Akademik</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white " href="#">
+                                    <div
+                                        class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons-round opacity-10">person</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Monev</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white " href="#">
+                                    <div
+                                        class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons-round opacity-10">person</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Kalender</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white " href="#">
+                                    <div
+                                        class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons-round opacity-10">person</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Buku Induk</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white " href="#">
+                                    <div
+                                        class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons-round opacity-10">person</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">Buku Kerja</span>
+                                </a>
+                            </li>
                         </ul>
                         <hr class="horizontal light mt-0 mb-2">
                     </div>
@@ -155,7 +191,7 @@
                     <a class="nav-link text-white" data-bs-toggle="collapse" href="#ppdb"
                         class="nav-link text-white" aria-controls="ppdb" role="button" aria-expanded="false">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons-round opacity-10">school</i>
+                            <i class="material-icons-round opacity-10">person_pin</i>
                         </div>
                         <span class="nav-link-text ms-1">PPDB</span>
                     </a>

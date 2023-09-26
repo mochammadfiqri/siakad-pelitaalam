@@ -15,12 +15,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="float-start mb-2 col-12 col-md-12 col-lg-4">
-                            <div
-                                class="input-group input-group-outline @if ($errors->has('search')) is-filled is-invalid @elseif ($search) is-filled @endif">
-                                <label class="form-label">Cari...</label>
-                                <input wire:model="search" type="text" class="form-control"
-                                    oninput="checkInput(this)" onfocus="focused(this)" onfocusout="defocused(this)">
-                            </div>
+                            <x-btn-search style="display: flex; align-items: center; width: 70%" placeholder="Cari Tahun Akademik..."/>
                         </div>
                         <div class="col-12 col-md-12 col-lg-8">
                             <a href="#" class="btn btn-rounded btn-outline-secondary mb-2 float-end"
@@ -46,15 +41,15 @@
                 <div class="col-12 mt-2">
                     <div class="card mt-2">
                         <div class="card-body px-0 pb-2">
-                            @if($data->status === 'active')
-                                <button type="button" class="btn btn-sm btn-outline-success btn-rounded shadow-dark ms-4"
+                            @if ($data->status === 'active')
+                                <button type="button"
+                                    class="btn btn-sm btn-outline-success btn-rounded shadow-dark ms-4"
                                     style="width: 15%" disabled>Aktif</button>
                             @else
-                                <button type="button" class="btn btn-sm btn-outline-secondary btn-rounded shadow-dark ms-4"
+                                <button type="button"
+                                    class="btn btn-sm btn-outline-secondary btn-rounded shadow-dark ms-4"
                                     style="width: 15%" disabled>Nonaktif</button>
                             @endif
-                            {{-- <button type="button" class="btn btn-sm @if($data->status === 'aktif') btn-outline-success @else btn-outline-secondary @endif btn-rounded shadow-dark ms-4"
-                                style="width: 15%" @if($data->status !== 'aktif') disabled @endif>{{ $data->status }}</button> --}}
                             <style>
                                 /* Menyembunyikan tanda dropdown */
                                 .dropdown-toggle::after {
@@ -74,22 +69,28 @@
                                 </button>
                                 <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        @if($data->status === 'active')
-                                            <a class="dropdown-item border-radius-md" wire:click="validDeactivation({{ $data->id }})">Nonaktifkan</a>
+                                        @if ($data->status === 'active')
+                                            <a class="dropdown-item border-radius-md"
+                                                wire:click="validDeactivation({{ $data->id }})">Nonaktifkan</a>
                                         @else
-                                            <a class="dropdown-item border-radius-md" wire:click="validActivation({{ $data->id }})">Aktifkan</a>
+                                            <a class="dropdown-item border-radius-md"
+                                                wire:click="validActivation({{ $data->id }})">Aktifkan</a>
                                         @endif
                                     </li>
-                                    <li><a class="dropdown-item border-radius-md" data-bs-toggle="modal" data-bs-target="#updateTA" wire:click='editTA({{ $data->id }})'>Edit</a></li>
+                                    <li><a class="dropdown-item border-radius-md" data-bs-toggle="modal"
+                                            data-bs-target="#updateTA" wire:click='editTA({{ $data->id }})'>Edit</a>
+                                    </li>
                                     <li><a class="dropdown-item border-radius-md" href="javascript:;">Hapus</a></li>
                                 </ul>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
-                        <a href="/tahun-akademik/mapel" class="ms-4 mt-2">
-                            <h4 class="fw-bold mb-0">{{ $data->tahun_awal }} / {{ $data->tahun_akhir }} - {{ $data->semester }}</h4>
+                        <a href="/tahun-akademik/mapel"
+                            class="ms-4 mt-2 @if ($data->status !== 'active') disabled-link @endif">
+                            <h4 class="fw-bold mb-0">{{ $data->tahun_awal }} / {{ $data->tahun_akhir }} -
+                                {{ $data->semester }}</h4>
                             @foreach ($data->users as $kepsek)
-                                <p class="fw-bold fst-italic text-info mb-0">{{ $kepsek->nama }}</p>    
+                                <p class="fw-bold fst-italic text-info mb-0">{{ $kepsek->nama }}</p>
                             @endforeach
                             <div
                                 class="d-flex mb-3 flex-grow-1 flex-wrap justify-content-md-start justify-content-between mt-4">

@@ -275,25 +275,16 @@
                                 <input type="text" class="form-control" placeholder="{{ $username }}"
                                     onfocus="focused(this)" onfocusout="defocused(this)" disabled>
                             </div>
-                            <div class="mb-0">
+                            <div class="mb-2">
                                 <label>Password</label>
                                 <input type="text" class="form-control" placeholder="{{ $password }}"
                                     onfocus="focused(this)" onfocusout="defocused(this)" disabled>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-6">
-                            <label>No. Handphone</label>
+                            <div class="mb-0">
+                                <label>No. Handphone</label>
                             <input type="text" class="form-control" placeholder="{{ $no_hp }}"
                                 onfocus="focused(this)" onfocusout="defocused(this)" disabled>
-                        </div>
-                        <div class="col-6">
-                            <label>Mata Pelajaran</label>
-                            
-                            <input type="text" class="form-control" placeholder="tes"
-                                onfocus="focused(this)" onfocusout="defocused(this)" disabled>
-                            
+                            </div>
                         </div>
                     </div>
                     <button class="btn btn-danger btn-rounded shadow-dark" type="button"
